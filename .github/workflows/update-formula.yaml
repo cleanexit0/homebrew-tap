@@ -22,8 +22,10 @@ jobs:
           
           sed -i "s/version \".*\"/version \"${VERSION_NUM}\"/" Formula/darwin-photos.rb
           sed -i "s|darwin-photos/releases/download/v[^/]*/|darwin-photos/releases/download/${VERSION}/|g" Formula/darwin-photos.rb
-          sed -i "0,/sha256 \".*\"/s/sha256 \".*\"/sha256 \"${AMD64_SHA}\"/" Formula/darwin-photos.rb
-          sed -i "\$!N;s/sha256 \".*\"\(\n.*arm64\)/sha256 \"${ARM64_SHA}\"\1/;P;D" Formula/darwin-photos.rb
+          # Replace AMD64 sha (first occurrence)
+          sed -i "0,/sha256 \"[^\"]*\"/s//sha256 \"${AMD64_SHA}\"/" Formula/darwin-photos.rb
+          # Replace ARM64 sha (within on_arm block)
+          sed -i "/on_arm/,/sha256/{s/sha256 \"[^\"]*\"/sha256 \"${ARM64_SHA}\"/}" Formula/darwin-photos.rb
 
       - name: Commit and push
         run: |
