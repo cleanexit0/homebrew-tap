@@ -1,18 +1,18 @@
 class DarwinPhotos < Formula
   desc "CLI tool for exploring and exporting from macOS Photos library"
   homepage "https://github.com/cleanexit0/darwin-photos"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/cleanexit0/darwin-photos/releases/download/v0.2.0/darwin-photos_v#{version}_darwin_amd64.tar.gz"
-      sha256 "2407acd153fc5c3d7916dc577b5b4ef36502625c59bfa503504afbe8c7424804"
+      url "https://github.com/cleanexit0/darwin-photos/releases/download/v0.2.1/darwin-photos_v#{version}_darwin_amd64.tar.gz"
+      sha256 "c881f45f0e2e35902703bb8186ac7e68f4af7b11ccb4b00a5cb71e65d407cbaf"
     end
 
     on_arm do
-      url "https://github.com/cleanexit0/darwin-photos/releases/download/v0.2.0/darwin-photos_v#{version}_darwin_arm64.tar.gz"
-      sha256 "0a6e4556f9af92da1f1a6504d58faa84f1f67ca3973d444d823e67bcb3ff69be"
+      url "https://github.com/cleanexit0/darwin-photos/releases/download/v0.2.1/darwin-photos_v#{version}_darwin_arm64.tar.gz"
+      sha256 "f87b6efb85f0b8322cb5a3e9c5a523cefc9bcecbb56f4d0e4d8715852cf13ec2"
     end
   end
 
